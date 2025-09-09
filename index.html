@@ -1,93 +1,153 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
-    <title>Login Page</title>
+    <title>MicroJobs - Freelancers</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/index.css">
 </head>
 
 <body>
-    <div class="particles" id="particles"></div>
-    <div class="container" id="container">
-        <div class="form-container sign-up active">
-            <form>
-                <h1>Criar Conta</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-                <span>ou use seu email para cadastro</span>
-                <input type="text" placeholder="Nome" id="nome">
-                <input type="email" placeholder="Email" id="emailCadastro">
-                <div class="radio-group">
-                    <label>
-                        <input type="radio" name="perfil" value="prestador">
-                        <span></span> Prestador
-                    </label>
-                    <label>
-                        <input type="radio" name="perfil" value="contratante">
-                        <span></span> Contratante
-                    </label>
-                </div>
-
-                <input type="password" placeholder="Senha" id="senhaCadastro">
-                <input type="password" placeholder="Confirme a senha" id="confirmaSenhaCadastro">
-                <!-- <div class="botoes">
-                    <input type="submit" class="cadastro" id="cadastro" value="Cadastrar" />
-                </div> -->
-
-                <p class="mobile-text">
-                    Já tem conta?
-                    <a href="#" id="open-login-mobile">Login</a>
-                </p>
-
-                <button>Inscrever</button>
-            </form>
+    <header id="header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-briefcase"></i> MicroJobs
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#Microjobs">Microjobs</a></li>
+                    <li><a href="#Freelancers">Freelancers</a></li>
+                    <li><a href="#Contato">Contato</a></li>
+                    <li><a href="/assets/pages/login.html">Login</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="form-container sign-in ">
-            <form>
-                <h1>Entrar</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-                <span>ou use sua senha de email</span>
-                <input type="email" placeholder="Email" id="emailLogin">
-                <input type="password" placeholder="Senha" id="senhaLogin">
+    </header>
 
-                <a href="#" class="form-link">Esqueceu a senha?</a>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#inicio">InÃ­cio</a></li>
+            <li><a href="#Microjobs">Microjobs</a></li>
+            <li><a href="#Freelancers">Freelancers</a></li>
+            <li><a href="#Contato">Contato</a></li>
+              <li><a href="/assets/pages/login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="auth-buttons">
+        <a href="#" class="btn-login">
+            <i class="fas fa-user"></i> Login
+        </a>
+    </div>
 
-                <button>Entrar</button>
-
-                <p class="mobile-text">
-                    Não tem conta?
-                    <a href="#" id="open-register-mobile">Registre-se</a>
-                </p>
-            </form>
-        </div>
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Bem vindo de volta!</h1>
-                    <p>Insira seus dados pessoais para usar todos os recursos do site</p>
-                    <button class="hidden" id="login">Entrar</button>
-                </div>
-                <div class="toggle-panel toggle-right">
-                    <h1>Olá, amigo!</h1>
-                    <p>Registre-se com seus dados pessoais para usar todos os recursos do site</p>
-                    <button class="hidden" id="register">Inscrever</button>
-                </div>
+    <section class="hero" id="inicio">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <h1>sla glr.</h1>
+            <p>sla</p>
+            <div class="cta-buttons">
+                <a href="#Microjobs" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> Começar Agora
+                </a>
+                <a href="#freelancers" class="btn btn-secondary">
+                    <i class="fas fa-users"></i> Ver Freelancers
+                </a>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="section fade-in" id="Microjobs">
+        <h2 class="section-title">Microjobs em Destaque</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <i class="fas fa-palette card-icon"></i>
+                <h3>Design de Identidade Visual</h3>
+                <p>Criação completa de identidade visual para startup de tecnologia, incluindo logo, paleta de cores e
+                    guidelines.</p>
+                <div class="price">R$ 850</div>
+                <a href="#" class="btn-card">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-code card-icon"></i>
+                <h3>Desenvolvimento Full-Stack</h3>
+                <p>Aplicação web responsiva com React, Node.js e banco de dados. Dashboard administrativo incluso.</p>
+                <div class="price">R$ 2.500</div>
+                <a href="#" class="btn-card">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-chart-line card-icon"></i>
+                <h3>Estratégia Digital 360°</h3>
+                <p>Campanha completa de marketing digital com foco em ROI, incluindo SEO, redes sociais e automação.</p>
+                <div class="price">R$ 1.200</div>
+                <a href="#" class="btn-card">Ver Detalhes <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section fade-in" id="freelancers">
+        <h2 class="section-title">Freelancers Premium</h2>
+        <div class="cards-grid">
+            <div class="freelancer-card">
+                <div class="freelancer-avatar">JS</div>
+                <h3>Amanda</h3>
+                <p>Designer UI/UX Sênior</p>
+                <div class="freelancer-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span class="rating-text">5.0 (127 avaliações)</span>
+                </div>
+                <p class="freelancer-description">Especialista em interfaces modernas e experiência do usuário</p>
+            </div>
+            <div class="freelancer-card">
+                <div class="freelancer-avatar">MS</div>
+                <h3>William</h3>
+                <p>Desenvolvedora Front-end</p>
+                <div class="freelancer-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span class="rating-text">4.9 (89 avaliações)</span>
+                </div>
+                <p class="freelancer-description">React, Vue.js e animações CSS avançadas</p>
+            </div>
+            <div class="freelancer-card">
+                <div class="freelancer-avatar">CS</div>
+                <h3>Pedro</h3>
+                <p>Especialista em Growth</p>
+                <div class="freelancer-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span class="rating-text">4.8 (156 avaliações)</span>
+                </div>
+                <p class="freelancer-description">Marketing de performance e automação</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="footer-text">© 2025 MicroJobs. Conectando talentos ao futuro.</p>
+        </div>
+    </footer>
+
+    
+    <script src="/assets/js/index.js"></script>
 </body>
 
 </html>
