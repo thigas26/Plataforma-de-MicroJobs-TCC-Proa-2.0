@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MicroJobs - Freelancers</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
+    <div class="acessibilidade-toolbar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+        <button onclick="toggleContraste()" aria-label="Ativar ou desativar alto contraste">🌓 Contraste</button>
+        <button onclick="alterarFonte('aumentar')" aria-label="Aumentar fonte">A+</button>
+        <button onclick="alterarFonte('diminuir')" aria-label="Diminuir fonte">A-</button>
+        <button onclick="lerTexto('main')" aria-label="Ler conteúdo principal em voz alta">🔊 Ler</button>
+    </div>
+
     <header id="header">
         <div class="header-container">
             <div class="logo">
@@ -19,9 +26,9 @@
                 <ul class="nav-links">
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#Microjobs">Microjobs</a></li>
-                    <li><a href="#Freelancers">Freelancers</a></li>
-                    <li><a href="#Contato">Contato</a></li>
-                    <li><a href="/assets/pages/login.html">Login</a></li>
+                    <li><a href="#freelancers">Freelancers</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="pages/login.html">Login</a></li>
                 </ul>
             </nav>
         </div>
@@ -33,7 +40,7 @@
             <li><a href="#Microjobs">Microjobs</a></li>
             <li><a href="#freelancers">Freelancers</a></li>
             <li><a href="#Contato">Contato</a></li>
-              <li><a href="/assets/pages/login.html">Login</a></li>
+            <li><a href="/assets/pages/login.html">Login</a></li>
         </ul>
     </nav>
     <div class="auth-buttons">
@@ -146,8 +153,9 @@
         </div>
     </footer>
 
-    
-    <script src="/assets/js/index.js"></script>
+
+    <script src="js/index.js"></script>
+    <script src="js/acessibilidade.js"></script>
 </body>
 
 </html>
