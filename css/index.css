@@ -452,9 +452,9 @@ footer {
 }
 
 .acessibilidade-toolbar button {
-  background: #222;
-  color: #fff;
-  border: none;
+  background: var(--background);
+  color: var(--accent);
+  border: 1px solid var(--secondary);
   padding: 6px 10px;
   border-radius: 4px;
   cursor: pointer;
@@ -468,24 +468,31 @@ footer {
 
 /* Alto contraste */
 .alto-contraste, 
+.alto-contraste div,
 .alto-contraste header, 
 .alto-contraste .card, 
 .alto-contraste .freelancer-card, 
 .alto-contraste footer {
-  background-color: #000 !important;
-  color: #fff !important;
-  border-color: #fff !important;
+  background-color: #000 ;
+  color: #fff ;
+  border-color: #fff ;
 }
 
-.alto-contraste a {
-  color: #ff0 !important;
+.alto-contraste a,
+.alto-contraste p,
+.alto-contraste span,
+.alto-contraste h3 {
+  color: #fff ;
 }
 
 .alto-contraste button {
-  background: #fff !important;
-  color: #000 !important;
+  background: #000 ;
+  color: #fff ;
 }
-
+.alto-contraste .particle {
+  background-color: #ffffff ;
+  opacity: 1 ;
+}
 
 
 @media (max-width: 768px) {
