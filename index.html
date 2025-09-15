@@ -10,18 +10,20 @@
 </head>
 
 <body>
-    <div class="acessibilidade-toolbar" role="toolbar" aria-label="Ferramentas de acessibilidade">
-        <button onclick="toggleContraste()" aria-label="Ativar ou desativar alto contraste">🌓 Contraste</button>
-        <button onclick="alterarFonte('aumentar')" aria-label="Aumentar fonte">A+</button>
-        <button onclick="alterarFonte('diminuir')" aria-label="Diminuir fonte">A-</button>
-        <button onclick="lerTexto('main')" aria-label="Ler conteúdo principal em voz alta">🔊 Ler</button>
-    </div>
-
     <header id="header">
         <div class="header-container">
             <div class="logo">
                 <i class="fas fa-briefcase"></i> MicroJobs
             </div>
+
+            <!-- Botões de Acessibilidade -->
+            <div class="acessibilidade-toolbar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+                <button onclick="toggleContraste()" aria-label="Ativar ou desativar alto contraste">🌓</button>
+                <button onclick="alterarFonte('aumentar')" aria-label="Aumentar fonte">A+</button>
+                <button onclick="alterarFonte('diminuir')" aria-label="Diminuir fonte">A-</button>
+                <button onclick="lerTexto('main')" aria-label="Ler conteúdo principal em voz alta">🔊</button>
+            </div>
+
             <nav>
                 <ul class="nav-links">
                     <li><a href="#inicio">Início</a></li>
