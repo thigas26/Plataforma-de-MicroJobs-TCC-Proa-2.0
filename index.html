@@ -16,23 +16,46 @@
                 <i class="fas fa-briefcase"></i> MicroJobs
             </div>
 
-            <!-- Botões de Acessibilidade -->
-            <div class="acessibilidade-toolbar" role="toolbar" aria-label="Ferramentas de acessibilidade">
-                <button onclick="toggleContraste()" aria-label="Ativar ou desativar alto contraste">🌓</button>
-                <button onclick="alterarFonte('aumentar')" aria-label="Aumentar fonte">A+</button>
-                <button onclick="alterarFonte('diminuir')" aria-label="Diminuir fonte">A-</button>
-                <button onclick="lerTexto('main')" aria-label="Ler conteúdo principal em voz alta">🔊</button>
-            </div>
-
-            <nav>
+            <!-- Menu retrátil -->
+            <nav class="nav-menu">
                 <ul class="nav-links">
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#Microjobs">Microjobs</a></li>
                     <li><a href="#freelancers">Freelancers</a></li>
                     <li><a href="#contato">Contato</a></li>
-                    <li><a href="login.html">Login</a></li>
                 </ul>
+
+                <!-- Toolbar de acessibilidade (somente no menu retrátil) -->
+                <div class="acessibilidade-toolbar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+                    <button type="button" onclick="toggleContraste()" aria-label="Ativar ou desativar alto contraste">
+                        <i class="fas fa-adjust"></i>
+                    </button>
+                    <button type="button" onclick="alterarFonte('aumentar')" aria-label="Aumentar fonte">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    <button type="button" onclick="alterarFonte('diminuir')" aria-label="Diminuir fonte">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    <button type="button" onclick="lerTexto('main')" aria-label="Ler conteúdo principal em voz alta">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
             </nav>
+
+            <!-- Área de login e dark mode (sempre visíveis) -->
+            <div class="auth-buttons">
+                <a href="#" class="btn-login">
+                    <i class="fas fa-user"></i> Login
+                </a>
+                <button id="dark-toggle" aria-label="Ativar ou desativar modo escuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Botão hamburguer -->
+            <button class="menu-toggle" aria-label="Abrir/fechar menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
@@ -151,6 +174,17 @@
                 <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
             </div>
+
+            <form class="contact-form">
+                <h3>Entre em Contato</h3>
+                <input type="text" id="nomeContato" placeholder="Seu nome" required>
+                <input type="email" id="emailContato" placeholder="Seu e-mail" required>
+                <textarea id="mensagemContato" rows="4" placeholder="Sua mensagem" required></textarea>
+                <button type="submit" class="btn-card">
+                    <i class="fas fa-paper-plane"></i> Enviar
+                </button>
+            </form>
+            
             <p class="footer-text">© 2025 MicroJobs. Conectando talentos ao futuro.</p>
         </div>
     </footer>

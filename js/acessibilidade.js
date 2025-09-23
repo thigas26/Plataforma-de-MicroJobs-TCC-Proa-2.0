@@ -30,3 +30,10 @@ function lerTexto(seletor){ const elemento = document.querySelector(seletor);
      }
 
 }
+
+const toggleBtn = document.querySelector('.menu-toggle');
+const acessibilidadeToolbar = document.querySelector('.acessibilidade-toolbar');
+
+toggleBtn.addEventListener('click', () => {
+  acessibilidadeToolbar.classList.toggle('active');
+});
