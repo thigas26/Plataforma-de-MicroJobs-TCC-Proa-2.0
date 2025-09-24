@@ -166,9 +166,9 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-const buttons2 = document.querySelectorAll('.btn, .btn-card, .btn-login');
+const buttons = document.querySelectorAll('.btn, .btn-card, .btn-login');
 buttons.forEach(button => {
-    button2.addEventListener('mouseenter', function () {
+    button.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-2px)';
     });
 
@@ -303,8 +303,9 @@ if (darkToggle) {
         const isDark = document.body.classList.contains("dark");
 
         const icon = darkToggle.querySelector('i');
-        icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-
+        if (icon) {
+            icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        }
         localStorage.setItem("darkMode", isDark);
     });
 
