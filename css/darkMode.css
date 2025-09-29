@@ -1,18 +1,18 @@
 :root {
-    --primary: #4caf50;          
-    --primary-light: #66bb6a;     
-    --primary-dark: #388e3c;     
-    --secondary: #8bc34a;        
-    --accent: #2e7d32;            
-    
-    --background: #f5f0e6;        
-    --surface: #ffffff;           
-    --surface-light: #faf7f0;    
-    --surface-dark: #ede4d3;      
-    --text: #2e2e2e;              
-    --text-muted: #666666;        
-    --text-light: #888888;        
-    
+    --primary: #4caf50;
+    --primary-light: #66bb6a;
+    --primary-dark: #388e3c;
+    --secondary: #8bc34a;
+    --accent: #2e7d32;
+
+    --background: #f5f0e6;
+    --surface: #ffffff;
+    --surface-light: #faf7f0;
+    --surface-dark: #ede4d3;
+    --text: #2e2e2e;
+    --text-muted: #666666;
+    --text-light: #888888;
+
     --gradient: linear-gradient(135deg, #4caf50 0%, #66bb6a 50%, #8bc34a 100%);
     --gradient-soft: linear-gradient(135deg, #f5f0e6 0%, #faf7f0 100%);
     --shadow: 0 10px 30px rgba(76, 175, 80, 0.15);
@@ -66,4 +66,52 @@ body.dark .hero {
     color: white;
     border-color: var(--primary);
     transform: translateY(-2px);
+}
+
+
+/* --- DARK MODE LOGIN --- */
+body.dark .container {
+    background-color: var(--surface);
+    box-shadow: var(--shadow-card);
+}
+
+body.dark .container form {
+    background-color: var(--surface);
+    color: var(--text);
+}
+
+body.dark .container input {
+    background-color: var(--surface-dark);
+    border: 1px solid var(--surface-light);
+    color: var(--text);
+}
+
+body.dark .container input::placeholder {
+    color: var(--text-light);
+}
+
+body.dark .container button {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+body.dark .container button:hover {
+    background-color: var(--primary-dark);
+}
+
+body.dark .radio-group label {
+    background-color: var(--surface-dark);
+    color: var(--text);
+}
+
+body.dark .radio-group label:hover {
+    background-color: var(--surface-light);
+}
+
+body.dark .radio-group input[type="radio"]+span {
+    border: 2px solid var(--primary-light);
+}
+
+body.dark .radio-group input[type="radio"]:checked+span::after {
+    background-color: var(--primary); /* destaque no dark */
 }

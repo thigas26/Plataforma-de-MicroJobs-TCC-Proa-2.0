@@ -49,6 +49,7 @@ header {
     border-bottom: 1px solid rgba(76, 175, 80, 0.1);
     z-index: 1000;
     transition: all 0.3s ease;
+    margin-bottom: 15px;
 }
 
 header.scrolled {
@@ -347,7 +348,6 @@ header.scrolled {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* centraliza certinho */
 }
 
 
@@ -457,62 +457,6 @@ header.scrolled {
     }
 }
 
-/* Estilos da barra de acessibilidade */
-.acessibilidade-toolbar {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  background: #f5f5f5;
-  padding: 8px;
-  border-radius: 8px;
-  display: flex;
-  gap: 5px;
-  z-index: 1000;
-}
-
-.acessibilidade-toolbar button {
-  background: var(--background);
-  color: var(--accent);
-  border: 1px solid var(--secondary);
-  padding: 6px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.acessibilidade-toolbar button:focus {
-  outline: 2px solid #005fcc;
-}
-
-
-/* Alto contraste */
-.alto-contraste, 
-.alto-contraste div,
-.alto-contraste header, 
-.alto-contraste .card, 
-.alto-contraste .freelancer-card, 
-.alto-contraste footer {
-  background-color: #000 ;
-  color: #fff ;
-  border-color: #fff ;
-}
-
-.alto-contraste a,
-.alto-contraste p,
-.alto-contraste span,
-.alto-contraste h3 {
-  color: #fff ;
-}
-
-.alto-contraste button {
-  background: #000 ;
-  color: #fff ;
-}
-.alto-contraste .particle {
-  background-color: #ffffff ;
-  opacity: 1 ;
-}
-
 
 @media (max-width: 768px) {
     .nav-links {
@@ -574,47 +518,7 @@ header.scrolled {
     background: var(--primary-light);
 }
 
-/* Botão hambúrguer sempre visível */
-.menu-toggle {
-  background: var(--surface);
-  border: 2px solid var(--surface-dark);
-  color: var(--text);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.menu-toggle:hover {
-  background: var(--primary);
-  color: white;
-  border-color: var(--primary);
-}
-
-/* Toolbar escondida por padrão */
-.acessibilidade-toolbar {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 60px; /* aparece abaixo do header */
-  right: 20px;
-  background: var(--surface);
-  border: 1px solid var(--surface-dark);
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: var(--shadow-card);
-  z-index: 1001;
-}
-
-/* Toolbar quando ativa */
-.acessibilidade-toolbar.active {
-  display: flex;
-  gap: 8px;
-}
 
 /* Desktop: os links continuam visíveis normalmente */
 @media (min-width: 768px) {
@@ -624,53 +528,6 @@ header.scrolled {
   }
 }
 
-
-/* Modo dark */
-body.dark {
-    --background: #121212;
-    --surface: #1e1e1e;
-    --surface-light: #252525;
-    --surface-dark: #2c2c2c;
-    --text: #e0e0e0;
-    --text-muted: #aaa;
-    --text-light: #ccc;
-    --gradient-soft: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
-}
-
-body.dark header {
-    background: rgba(18, 18, 18, 0.95);
-    border-bottom: 1px solid rgba(76, 175, 80, 0.2);
-}
-
-body.dark header.scrolled {
-    background: rgba(18, 18, 18, 0.98);
-}
-
-body.dark .hero {
-    background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
-}
-
-/* Dark Mode Toggle */
-#dark-toggle {
-    background: var(--surface);
-    border: 2px solid var(--surface-dark);
-    color: var(--text);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#dark-toggle:hover {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
-    transform: translateY(-2px);
-}
 
 .auth-buttons {
     display: flex;
