@@ -1,0 +1,119 @@
+:root {
+    --primary: #4caf50;          
+    --primary-light: #66bb6a;     
+    --primary-dark: #388e3c;     
+    --secondary: #8bc34a;        
+    --accent: #2e7d32;            
+    
+    --background: #f5f0e6;        
+    --surface: #ffffff;           
+    --surface-light: #faf7f0;    
+    --surface-dark: #ede4d3;      
+    --text: #2e2e2e;              
+    --text-muted: #666666;        
+    --text-light: #888888;        
+    
+    --gradient: linear-gradient(135deg, #4caf50 0%, #66bb6a 50%, #8bc34a 100%);
+    --gradient-soft: linear-gradient(135deg, #f5f0e6 0%, #faf7f0 100%);
+    --shadow: 0 10px 30px rgba(76, 175, 80, 0.15);
+    --shadow-lg: 0 20px 40px rgba(76, 175, 80, 0.2);
+    --shadow-card: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilos da barra de acessibilidade */
+.acessibilidade-toolbar {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #f5f5f5;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  gap: 5px;
+  z-index: 1000;
+}
+
+.acessibilidade-toolbar button {
+  background: var(--background);
+  color: var(--accent);
+  border: 1px solid var(--secondary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.acessibilidade-toolbar button:focus {
+  outline: 2px solid #005fcc;
+}
+
+
+/* Alto contraste */
+.alto-contraste, 
+.alto-contraste div,
+.alto-contraste header, 
+.alto-contraste .card, 
+.alto-contraste .freelancer-card, 
+.alto-contraste footer {
+  background-color: #000 ;
+  color: #fff ;
+  border-color: #fff ;
+}
+
+.alto-contraste a,
+.alto-contraste p,
+.alto-contraste span,
+.alto-contraste h3 {
+  color: #fff ;
+}
+
+.alto-contraste button {
+  background: #000 ;
+  color: #fff ;
+}
+.alto-contraste .particle {
+  background-color: #ffffff ;
+  opacity: 1 ;
+}
+
+/* Botão hambúrguer sempre visível */
+.menu-toggle {
+  background: var(--surface);
+  border: 2px solid var(--surface-dark);
+  color: var(--text);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Toolbar escondida por padrão */
+.acessibilidade-toolbar {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px; /* aparece abaixo do header */
+  right: 20px;
+  background: var(--surface);
+  border: 1px solid var(--surface-dark);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: var(--shadow-card);
+  z-index: 1001;
+}
+
+/* Toolbar quando ativa */
+.acessibilidade-toolbar.active {
+  display: flex;
+  gap: 8px;
+}
