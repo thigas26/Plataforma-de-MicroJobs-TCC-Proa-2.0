@@ -371,7 +371,7 @@ header.scrolled {
     animation: float 8s ease-in-out infinite;
 }
 
-.mobile-text a{
+.mobile-text a {
     color: var(--primary);
     font-weight: 600;
     font-size: 1rem;
@@ -391,11 +391,82 @@ header.scrolled {
     }
 }
 
-@media (min-width:768px) {
+button:focus,
+a:focus,
+#menu-toggle-links:focus,
+#menu-toggle-acessibilidade:focus {
+    outline: 2px solid var(--primary-dark);
+    outline-offset: 3px;
+}
+
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-login {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    background: var(--gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+    background: var(--primary-light);
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Esconde todos os hambúrgueres no desktop */
+.menu-toggle {
+    display: none;
+}
+
+
+/* Container dos botões hamburguer lado a lado */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth-buttons {
+    display: none;
+    /* some com login/dark mode no mobile se quiser */
+}
+
+/* Desktop: os links continuam visíveis normalmente */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
     p.mobile-text {
         display: none;
     }
 }
+
 
 /* VERSÃO MOBILE */
 @media screen and (max-width: 768px) {
@@ -443,11 +514,101 @@ header.scrolled {
         margin-top: 1rem;
         font-size: 14px;
     }
+
+    .nav-links {
+        display: none;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .header-container {
+        padding: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+
+    .menu-toggle:hover {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+    }
+
+    /* Esconde menus por padrão */
+    .nav-links,
+    .acessibilidade-toolbar {
+        flex-direction: column;
+        gap: 15px;
+        background: var(--surface);
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: var(--shadow-card);
+        z-index: 1001;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+    }
+
+    /* Quando ativos, aparecem */
+    .nav-links.active,
+    .acessibilidade-toolbar.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* Botões hambúrguer visíveis apenas no mobile */
+    #menu-toggle-links,
+    #menu-toggle-acessibilidade {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--surface);
+        border: 2px solid var(--surface-dark);
+        color: var(--text);
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 1002;
+    }
+
+    #menu-toggle-links:hover,
+    #menu-toggle-acessibilidade:hover {
+        background: var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+    }
+
+    /* Ambos do lado direito, com espaço entre eles */
+    #menu-toggle-links {
+        right: 70px;
+        /* Ajuste a distância do lado direito */
+    }
+
+    #menu-toggle-acessibilidade {
+        right: 15px;
+    }
 }
 
 @media screen and (max-width: 740px) {
     .form-container form {
         width: 80%;
+        margin-top: 30px;
     }
 }
 
@@ -457,80 +618,9 @@ header.scrolled {
     }
 }
 
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    
-    .header-container {
-        padding: 1rem;
-    }
-    
-    .btn {
-        width: 100%;
-        max-width: 300px;
-        justify-content: center;
-    }
-}
-
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 2rem;
     }
-    
-}
 
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-.auth-buttons {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.btn-login {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.7rem 1.5rem;
-    background: var(--gradient);
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    font-size: 0.9rem;
-    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
-}
-
-.btn-login:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
-    background: var(--primary-light);
-}
-
-
-
-/* Desktop: os links continuam visíveis normalmente */
-@media (min-width: 768px) {
-  .nav-links {
-    display: flex;
-    gap: 20px;
-  }
-}
-
-
-.auth-buttons {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
 }

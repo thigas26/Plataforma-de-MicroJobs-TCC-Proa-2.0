@@ -113,5 +113,9 @@ body.dark .radio-group input[type="radio"]+span {
 }
 
 body.dark .radio-group input[type="radio"]:checked+span::after {
-    background-color: var(--primary); /* destaque no dark */
+    background-color: var(--primary);
+}
+
+body.dark .container a{
+    color: #2e7d32;
 }

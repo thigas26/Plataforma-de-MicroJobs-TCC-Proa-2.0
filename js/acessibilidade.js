@@ -31,9 +31,28 @@ function lerTexto(seletor){ const elemento = document.querySelector(seletor);
 
 }
 
-const toggleBtn = document.querySelector('.menu-toggle');
+/* const toggleBtn = document.querySelector('.menu-toggle');
 const acessibilidadeToolbar = document.querySelector('.acessibilidade-toolbar');
 
 toggleBtn.addEventListener('click', () => {
   acessibilidadeToolbar.classList.toggle('active');
+}); */
+
+// Seletores dos botões
+const toggleLinksBtn = document.querySelector('#menu-toggle-links');
+const toggleAcessibilidadeBtn = document.querySelector('#menu-toggle-acessibilidade');
+
+// Seletores dos menus
+const navLinks = document.querySelector('.nav-links');
+const acessibilidadeToolbar = document.querySelector('.acessibilidade-toolbar');
+
+// Abre/fecha menu de links principais
+toggleLinksBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
 });
+
+// Abre/fecha toolbar de acessibilidade
+toggleAcessibilidadeBtn.addEventListener('click', () => {
+  acessibilidadeToolbar.classList.toggle('active');
+});
+
