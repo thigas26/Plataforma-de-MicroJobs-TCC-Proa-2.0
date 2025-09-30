@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary: #4caf50;          
-    --primary-light: #66bb6a;     
-    --primary-dark: #388e3c;     
-    --secondary: #8bc34a;        
-    --accent: #2e7d32;            
-    
-    --background: #f5f0e6;        
-    --surface: #ffffff;           
-    --surface-light: #faf7f0;    
-    --surface-dark: #ede4d3;      
-    --text: #2e2e2e;              
-    --text-muted: #666666;        
-    --text-light: #888888;        
-    
+    --primary: #4caf50;
+    --primary-light: #66bb6a;
+    --primary-dark: #388e3c;
+    --secondary: #8bc34a;
+    --accent: #2e7d32;
+
+    --background: #f5f0e6;
+    --surface: #ffffff;
+    --surface-light: #faf7f0;
+    --surface-dark: #ede4d3;
+    --text: #2e2e2e;
+    --text-muted: #666666;
+    --text-light: #888888;
+
     --gradient: linear-gradient(135deg, #4caf50 0%, #66bb6a 50%, #8bc34a 100%);
     --gradient-soft: linear-gradient(135deg, #f5f0e6 0%, #faf7f0 100%);
     --shadow: 0 10px 30px rgba(76, 175, 80, 0.15);
@@ -94,13 +94,16 @@ body::before {
 }
 
 @keyframes float {
-    0%, 100% { 
-        transform: translateY(0px) rotate(0deg); 
-        opacity: 0.4; 
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.4;
     }
-    50% { 
-        transform: translateY(-30px) rotate(180deg); 
-        opacity: 0.8; 
+
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+        opacity: 0.8;
     }
 }
 
@@ -458,6 +461,7 @@ footer {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -593,49 +597,55 @@ footer {
 
 /* Desktop: os links continuam visíveis normalmente */
 @media (min-width: 768px) {
-  .nav-links {
-    display: flex;
-    gap: 20px;
-  }
-  #menu-toggle-links{
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    #menu-toggle-links {
         display: none;
     }
-    
+
+    .nav-links .btn-login,
+    .nav-links #dark-toggle{
+        display: none;
+    }
+
 }
 
 @media (max-width: 768px) {
     .nav-links {
         display: none;
     }
-    
+
     .cta-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .cards-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .header-container {
         padding: 1rem;
     }
-    
+
     .section {
         padding: 4rem 1rem;
     }
-    
+
     .hero-content {
         padding: 1rem;
     }
-    
+
     .btn {
         width: 100%;
         max-width: 300px;
         justify-content: center;
     }
 
-        .menu-toggle:hover {
+    .menu-toggle:hover {
         background: var(--primary);
         color: white;
         border-color: var(--primary);
@@ -701,8 +711,17 @@ footer {
         right: 15px;
     }
 
-    .auth-buttons{
+    .auth-buttons {
         display: none;
+    }
+
+    .nav-links .btn-login {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+        padding: 8px;
     }
 }
 
@@ -710,12 +729,13 @@ footer {
     .hero h1 {
         font-size: 2rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
-    .card, .freelancer-card {
+
+    .card,
+    .freelancer-card {
         padding: 1.5rem;
     }
 }
