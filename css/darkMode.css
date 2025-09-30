@@ -47,7 +47,7 @@ body.dark .hero {
 
 
 /* Dark Mode Toggle */
-#dark-toggle {
+.dark-toggle {
     background: var(--surface);
     border: 2px solid var(--surface-dark);
     color: var(--text);
@@ -61,7 +61,7 @@ body.dark .hero {
     justify-content: center;
 }
 
-#dark-toggle:hover {
+.dark-toggle:hover {
     background: var(--primary);
     color: white;
     border-color: var(--primary);

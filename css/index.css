@@ -596,7 +596,7 @@ footer {
 }
 
 /* Desktop: os links continuam visíveis normalmente */
-@media (min-width: 768px) {
+@media (min-width: 855px) {
     .nav-links {
         display: flex;
         gap: 20px;
@@ -607,13 +607,13 @@ footer {
     }
 
     .nav-links .btn-login,
-    .nav-links #dark-toggle{
+    .nav-links .dark-toggle{
         display: none;
     }
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 855px) {
     .nav-links {
         display: none;
     }
