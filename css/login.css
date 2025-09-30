@@ -123,6 +123,7 @@ header.scrolled {
     max-width: 100%;
     min-height: 480px;
     z-index: 1;
+    margin: auto;
 }
 
 .container p {
@@ -437,13 +438,11 @@ a:focus,
     gap: 1rem;
 }
 
-/* Esconde todos os hambúrgueres no desktop */
 .menu-toggle {
     display: none;
 }
 
 
-/* Container dos botões hamburguer lado a lado */
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -452,10 +451,8 @@ a:focus,
 
 .auth-buttons {
     display: none;
-    /* some com login/dark mode no mobile se quiser */
 }
 
-/* Desktop: os links continuam visíveis normalmente */
 @media (min-width: 768px) {
     .nav-links {
         display: flex;
@@ -463,6 +460,9 @@ a:focus,
     }
 
     p.mobile-text {
+        display: none;
+    }
+    #menu-toggle-links{
         display: none;
     }
 }
@@ -594,10 +594,8 @@ a:focus,
         border-color: var(--primary);
     }
 
-    /* Ambos do lado direito, com espaço entre eles */
     #menu-toggle-links {
         right: 70px;
-        /* Ajuste a distância do lado direito */
     }
 
     #menu-toggle-acessibilidade {
