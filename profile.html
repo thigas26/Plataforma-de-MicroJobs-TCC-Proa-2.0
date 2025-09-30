@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+    <div class="container">
+        <main>
+            <div class="imagens">
+                <section>
+                    <img class="img-banner" src="assets/imagem-sem-fundo.png" alt="imagem sem nada de fundo">
+                    <img class="img-avatar" src="assets/avatar.png" alt="foto de perfil exemplo">
+                </section>
+            </div>
+
+            <button id="btn">✏️</button>
+
+            <div class="conteudo">
+                <section>
+                    <h3 class="nome">Nome: Seu Nome Aqui</h3>
+                    <p class="info">Informações: Suas informações aqui</p>
+                </section>
+
+                <form id="form-edit">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" placeholder="digite seu nome:" required>
+
+                    <label for="info">Informações:</label>
+                    <input type="text" name="info" placeholder="digite suas Informações:" required>
+
+                    <label for="sobre">Sobre:</label>
+                    <textarea name="sobre" class="green-input" placeholder="Escreva sobre você:" rows="4"
+                        required></textarea>
+
+                    <label for="experiencia">Experiência:</label>
+                    <textarea name="experiencia" class="green-input" placeholder="Nos conte suas experiências:" rows="4"
+                        required></textarea>
+
+                    <button type="button" id="save">Salvar</button>
+                </form>
+
+                <section class="avaliacao">
+                    <span class="estrela">⭐</span>
+                    <p class="nota">4,88</p>
+                </section>
+
+                <section>
+                    <div class="bio">
+                        <h4 class="sobre">Sobre:</h4>
+                    </div>
+                    <div class="formacao">
+                        <h4 class="experiencia">Experiencia:</h4>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/profile-page.js"></script>
+</body>
+
+</html>

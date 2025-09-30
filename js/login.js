@@ -54,7 +54,7 @@ formLogin.addEventListener("submit", (ev) => {
 
   if (usuario.email === email && usuario.senha === senha) {
     alert(`Bem-vindo, ${usuario.nome}!`);
-    window.location.href = "home.html"; // redireciona
+    window.location.href = "profile.html"; // redireciona
   } else {
     alert("Email ou senha incorretos!");
   }
