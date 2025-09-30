@@ -4,9 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat com IA</title>
-    <link rel="stylesheet" href="css/chat.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="css/darkMode.css">
+    <link rel="stylesheet" href="css/acessibilidade.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+    <header id="header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-briefcase"></i> MicroJobs
+            </div>
+
+            <!-- Menu retrátil -->
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="inicio.html">Início</a></li>
+                    <li><a href=chat.html>Chat</a></li>
+                    <li><a href=profile.html>Perfil</a></li>
+                    <li><a href="login.html" class="btn-login">
+                            <i class="fas fa-user"></i> Login
+                        </a></li>
+                    <li><button class="dark-toggle" aria-label="Ativar ou desativar modo escuro">
+                            <i class="fas fa-moon"></i>
+                        </button></li>
+                </ul>
+
+                <!-- Toolbar de acessibilidade (somente no menu retrátil) -->
+                <div class="acessibilidade-toolbar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+                    <button type="button" onclick="toggleContraste()" aria-label="Ativar ou desativar alto contraste">
+                        <i class="fas fa-adjust"></i>
+                    </button>
+                    <button type="button" onclick="alterarFonte('aumentar')" aria-label="Aumentar fonte">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    <button type="button" onclick="alterarFonte('diminuir')" aria-label="Diminuir fonte">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    <button type="button" onclick="lerTexto('main')" aria-label="Ler conteúdo principal em voz alta">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Área de login e dark mode (sempre visíveis) -->
+            <div class="auth-buttons">
+                <a href="login.html" class="btn-login">
+                    <i class="fas fa-user"></i> Login
+                </a>
+                <button class="dark-toggle" aria-label="Ativar ou desativar modo escuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <button id="menu-toggle-links" class="menu-toggle" aria-label="Abrir/fechar menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Botão hamburguer -->
+            <button id="menu-toggle-acessibilidade" class="menu-toggle" aria-label="Abrir/fechar acessibilidade">
+                <i class="fas fa-universal-access"></i>
+            </button>
+        </div>
+    </header>
     <div class="chat-container">
         <div class="chat-header">
           WORKLI IA🤖
@@ -38,5 +99,7 @@
     </div>
 
     <script src="js/chat.js"></script>
+    <script src="js/acessibilidade.js"></script>
+    <script src="js/darkMode.js"></script>
 </body>
 </html>
