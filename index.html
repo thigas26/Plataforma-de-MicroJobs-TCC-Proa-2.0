@@ -7,6 +7,7 @@
     <title>MicroJobs - Freelancers</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/catalogo.css">
     <link rel="stylesheet" href="css/darkMode.css">
     <link rel="stylesheet" href="css/acessibilidade.css">
 </head>
@@ -24,6 +25,7 @@
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#Microjobs">Microjobs</a></li>
                     <li><a href="#freelancers">Freelancers</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
                     <li><a href="#contato">Contato</a></li>
                     <li><a href="login.html" class="btn-login">
                             <i class="fas fa-user"></i> Login
@@ -97,6 +99,9 @@
                 </a>
                 <a href="#freelancers" class="btn btn-secondary">
                     <i class="fas fa-users"></i> Ver Freelancers
+                </a>
+                <a href="catalogo.html" target="_blank" class="btn btn-secondary">
+                    <i class="fas fa-list"></i> Ver Catálogo
                 </a>
             </div>
         </div>
@@ -178,6 +183,35 @@
         </div>
     </section>
 
+    <section class="section fade-in" id="catalogo">
+        <h2 class="section-title">Catálogo de Oportunidades</h2>
+
+        <!-- Filtros -->
+        <div class="filtros">
+            <label for="filtro-tipo">Tipo de Trabalho:</label>
+            <select id="filtro-tipo">
+                <option value="">Todos</option>
+                <option value="Freelancer">Freelancer</option>
+                <option value="MicroJob">MicroJob</option>
+            </select>
+
+            <label for="filtro-categoria">Categoria/Área:</label>
+            <select id="filtro-categoria">
+                <option value="">Todas</option>
+                <option value="TI">TI</option>
+                <option value="Design">Design</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Administração">Administração</option>
+                <option value="Escrita">Escrita</option>
+                <option value="Suporte">Suporte</option>
+            </select>
+        </div>
+
+        <div class="catalogo-grid" id="catalogo-grid">
+            <!-- Vagas serão inseridas aqui via JS -->
+        </div>
+    </section>
+
     <footer id="contato">
         <div class="footer-content">
             <div class="social-links">
@@ -203,8 +237,63 @@
 
 
     <script src="js/index.js"></script>
+    <script src="js/catalogo.js"></script>
     <script src="js/acessibilidade.js"></script>
     <script src="js/darkMode.js"></script>
+
+    <!-- Ícone do chat -->
+    <div id="chat-icon" style="position: fixed; bottom: 20px; right: 20px; cursor: pointer; z-index: 1000;">
+        <i class="fas fa-comments" style="font-size: 60px; color: #007bff;"></i>
+    </div>
+
+    <!-- Container do chat -->
+    <div id="chat-container" style="position: fixed; bottom: 90px; right: 20px; width: 300px; height: 400px; display: none; border: 1px solid #ccc; border-radius: 10px; background: white; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+        <div class="chat-container">
+            <div class="chat-header">
+                WORKLI IA🤖
+            </div>
+
+            <div class="api-setup">
+                <input type="password" id="apiKey" placeholder="Cole sua API key do Groq aqui (grátis)" />
+                <button onclick="conectarIA()">Conectar</button>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message info">
+                    <strong>🚀 Como obter sua API key GRATUITA:</strong><br><br>
+                    1. Acesse <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a><br>
+                    2. Faça login ou crie conta gratuita<br>
+                    3. Clique em <strong>"Create API Key"</strong><br>
+                    4. Dê um nome qualquer (ex: "MeuChat")<br>
+                    5. <strong>COPIE a chave completa</strong><br>
+                    6. Cole aqui e clique "Conectar"<br><br>
+                    ✅ <strong>Groq oferece créditos gratuitos!</strong><br>
+                    ⚡ <strong>Super rápido e ilimitado para uso pessoal</strong>
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Conecte primeiro com sua API key..." disabled>
+                <button id="sendButton" onclick="enviarMensagem()" disabled>Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chatIcon = document.getElementById('chat-icon');
+        const chatContainer = document.getElementById('chat-container');
+
+        chatIcon.addEventListener('click', () => {
+            // Alterna entre mostrar e esconder o chat
+            if(chatContainer.style.display === 'none') {
+                chatContainer.style.display = 'block';
+            } else {
+                chatContainer.style.display = 'none';
+            }
+        });
+    </script>
+
+    <script src="js/chat.js"></script>
 </body>
 
 </html>

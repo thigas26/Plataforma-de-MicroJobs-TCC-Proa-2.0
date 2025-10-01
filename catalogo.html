@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Oportunidades - MicroJobs</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/catalogo.css">
+    <link rel="stylesheet" href="css/darkMode.css">
+    <link rel="stylesheet" href="css/acessibilidade.css">
+</head>
+<body>
+    <header>
+        <h1>Catálogo de Oportunidades</h1>
+        <p>Explore oportunidades de trabalho freelance e microjobs</p>
+    </header>
+
+    <main>
+        <!-- Filtros -->
+        <div class="filtros">
+            <label for="filtro-tipo">Tipo de Trabalho:</label>
+            <select id="filtro-tipo">
+                <option value="">Todos</option>
+                <option value="Freelancer">Freelancer</option>
+                <option value="MicroJob">MicroJob</option>
+            </select>
+
+            <label for="filtro-categoria">Categoria/Área:</label>
+            <select id="filtro-categoria">
+                <option value="">Todas</option>
+                <option value="TI">TI</option>
+                <option value="Design">Design</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Administração">Administração</option>
+                <option value="Escrita">Escrita</option>
+                <option value="Suporte">Suporte</option>
+            </select>
+        </div>
+
+        <div class="catalogo-grid" id="catalogo-grid">
+            <!-- Vagas serão inseridas aqui via JS -->
+        </div>
+    </main>
+
+    <script>
+        let vagas = [];
+
+        // Carregar JSON
+        fetch('catalogo.json')
+            .then(response => response.json())
+            .then(data => {
+                vagas = data;
+                renderizarVagas(vagas);
+            })
+            .catch(error => console.error('Erro ao carregar catálogo:', error));
+
+        function renderizarVagas(vagasFiltradas) {
+            const grid = document.getElementById('catalogo-grid');
+            grid.innerHTML = '';
+
+            vagasFiltradas.forEach(vaga => {
+                const card = document.createElement('div');
+                card.className = 'vaga-card';
+                card.innerHTML = `
+                    <h3>${vaga.titulo}</h3>
+                    <p class="tipo">${vaga.tipo}</p>
+                    <p class="descricao">${vaga.descricao}</p>
+                    <div class="requisitos">
+                        <strong>Requisitos:</strong>
+                        <ul>
+                            ${vaga.requisitos.map(req => `<li>${req}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="beneficios">
+                        <strong>Benefícios:</strong>
+                        <ul>
+                            ${vaga.beneficios.map(ben => `<li>${ben}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <p class="categoria"><strong>Categoria:</strong> ${vaga.categoria}</p>
+                    <p class="localizacao"><strong>Localização:</strong> ${vaga.localizacao || 'Não especificada'}</p>
+                    <p class="pagamento"><strong>Pagamento:</strong> ${vaga.pagamento}</p>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filtros
+        document.getElementById('filtro-tipo').addEventListener('change', filtrar);
+        document.getElementById('filtro-categoria').addEventListener('change', filtrar);
+
+        function filtrar() {
+            const tipo = document.getElementById('filtro-tipo').value;
+            const categoria = document.getElementById('filtro-categoria').value;
+
+            let filtradas = vagas;
+
+            if (tipo) {
+                filtradas = filtradas.filter(v => v.tipo === tipo);
+            }
+
+            if (categoria) {
+                filtradas = filtradas.filter(v => v.categoria === categoria);
+            }
+
+            renderizarVagas(filtradas);
+        }
+    </script>
+
+    <script src="js/acessibilidade.js"></script>
+    <script src="js/darkMode.js"></script>
+</body>
+</html>
