@@ -254,6 +254,7 @@
         <div class="chat-container">
             <div class="chat-header">
                 WORKLI IA🤖
+                <button id="close-chat" style="float: right; background: none; border: none; color: white; font-size: 20px; cursor: pointer;">&times;</button>
             </div>
 
             <div class="api-setup">
@@ -285,6 +286,7 @@
     <script>
         const chatIcon = document.getElementById('chat-icon');
         const chatContainer = document.getElementById('chat-container');
+        const closeChatBtn = document.getElementById('close-chat');
 
         chatIcon.addEventListener('click', () => {
             // Alterna entre mostrar e esconder o chat
@@ -293,6 +295,10 @@
             } else {
                 chatContainer.style.display = 'none';
             }
+        });
+
+        closeChatBtn.addEventListener('click', () => {
+            chatContainer.style.display = 'none';
         });
     </script>
 

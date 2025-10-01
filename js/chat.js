@@ -1,20 +1,19 @@
-let apiKey = '';
-let conectado = false;
+document.addEventListener('DOMContentLoaded', () => {
+    const chatIcon = document.getElementById('chat-icon');
+    const chatContainer = document.getElementById('chat-container');
+    const closeChatBtn = document.getElementById('close-chat');
 
-const chatMessages = document.getElementById('chatMessages');
-const messageInput = document.getElementById('messageInput');
-const sendButton = document.getElementById('sendButton');
+    chatIcon.addEventListener('click', () => {
+        if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+            chatContainer.style.display = 'block';
+        } else {
+            chatContainer.style.display = 'none';
+    });
 
-
-async function conectarIA() {
-    const apiKeyInput = document.getElementById('apiKey');
-    apiKey = apiKeyInput.value.trim();
-    
-    if (!apiKey) {
-        adicionarMensagem('error', 'Por favor, cole sua API key do Groq!');
-        apiKeyInput.focus();
-        return;
-    }
+    closeChatBtn.addEventListener('click', () => {
+        chatContainer.style.display = 'none';
+    });
+});
 
     
     if (apiKey.length < 10) {
