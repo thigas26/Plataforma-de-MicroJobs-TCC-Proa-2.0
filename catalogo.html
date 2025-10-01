@@ -10,31 +10,89 @@
     <link rel="stylesheet" href="css/acessibilidade.css">
 </head>
 <body>
-    <header>
-        <h1>Catálogo de Oportunidades</h1>
-        <p>Explore oportunidades de trabalho freelance e microjobs</p>
+    <!-- Header com Navegação -->
+    <nav class="main-nav">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-rocket"></i> MicroJobs
+            </div>
+
+            <!-- Menu hambúrguer (mobile) -->
+            <button id="menu-toggle-links" aria-label="Menu de navegação">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="catalogo.html" class="active"><i class="fas fa-briefcase"></i> Catálogo</a></li>
+                <li><a href="#servicos"><i class="fas fa-star"></i> Serviços</a></li>
+                <li><a href="#freelancers"><i class="fas fa-users"></i> Freelancers</a></li>
+                <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+                <li class="mobile-only"><a href="login.html" class="btn-login-mobile"><i class="fas fa-sign-in-alt"></i> Entrar</a></li>
+            </ul>
+
+            <div class="auth-buttons">
+                <button class="dark-toggle" id="dark-toggle" aria-label="Alternar modo escuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="login.html" class="btn-login">
+                    <i class="fas fa-sign-in-alt"></i> Entrar
+                </a>
+            </div>
+
+            <!-- Botão de acessibilidade (mobile) -->
+            <button id="menu-toggle-acessibilidade" aria-label="Menu de acessibilidade">
+                <i class="fas fa-universal-access"></i>
+            </button>
+
+            <!-- Toolbar de acessibilidade (somente no menu retrátil) -->
+            <div class="acessibilidade-toolbar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+                <button type="button" onclick="toggleContraste()" aria-label="Ativar ou desativar alto contraste">
+                    <i class="fas fa-adjust"></i>
+                </button>
+                <button type="button" onclick="alterarFonte('aumentar')" aria-label="Aumentar fonte">
+                    <i class="fas fa-search-plus"></i>
+                </button>
+                <button type="button" onclick="alterarFonte('diminuir')" aria-label="Diminuir fonte">
+                    <i class="fas fa-search-minus"></i>
+                </button>
+                <button type="button" onclick="lerTexto('main')" aria-label="Ler conteúdo principal em voz alta">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero do Catálogo -->
+    <header class="catalog-hero">
+        <h1><i class="fas fa-briefcase"></i> Catálogo de Oportunidades</h1>
+        <p>Explore oportunidades de trabalho freelance e microjobs personalizadas para você</p>
     </header>
 
     <main>
         <!-- Filtros -->
         <div class="filtros">
-            <label for="filtro-tipo">Tipo de Trabalho:</label>
-            <select id="filtro-tipo">
-                <option value="">Todos</option>
-                <option value="Freelancer">Freelancer</option>
-                <option value="MicroJob">MicroJob</option>
-            </select>
+            <div>
+                <label for="filtro-tipo"><i class="fas fa-filter"></i> Tipo de Trabalho:</label>
+                <select id="filtro-tipo">
+                    <option value="">Todos</option>
+                    <option value="Freelancer">Freelancer</option>
+                    <option value="MicroJob">MicroJob</option>
+                </select>
+            </div>
 
-            <label for="filtro-categoria">Categoria/Área:</label>
-            <select id="filtro-categoria">
-                <option value="">Todas</option>
-                <option value="TI">TI</option>
-                <option value="Design">Design</option>
-                <option value="Marketing">Marketing</option>
-                <option value="Administração">Administração</option>
-                <option value="Escrita">Escrita</option>
-                <option value="Suporte">Suporte</option>
-            </select>
+            <div>
+                <label for="filtro-categoria"><i class="fas fa-tag"></i> Categoria/Área:</label>
+                <select id="filtro-categoria">
+                    <option value="">Todas</option>
+                    <option value="TI">TI</option>
+                    <option value="Design">Design</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Administração">Administração</option>
+                    <option value="Escrita">Escrita</option>
+                    <option value="Suporte">Suporte</option>
+                </select>
+            </div>
         </div>
 
         <div class="catalogo-grid" id="catalogo-grid">
@@ -52,10 +110,20 @@
                 vagas = data;
                 renderizarVagas(vagas);
             })
-            .catch(error => console.error('Erro ao carregar catálogo:', error));
+            .catch(error => {
+                console.error('Erro ao carregar catálogo:', error);
+                document.getElementById('catalogo-grid').innerHTML = 
+                    '<div class="no-results">Erro ao carregar oportunidades. Tente novamente mais tarde.</div>';
+            });
 
         function renderizarVagas(vagasFiltradas) {
             const grid = document.getElementById('catalogo-grid');
+            
+            if (vagasFiltradas.length === 0) {
+                grid.innerHTML = '<div class="no-results">Nenhuma oportunidade encontrada com os filtros selecionados.</div>';
+                return;
+            }
+
             grid.innerHTML = '';
 
             vagasFiltradas.forEach(vaga => {
@@ -65,23 +133,36 @@
                     <h3>${vaga.titulo}</h3>
                     <p class="tipo">${vaga.tipo}</p>
                     <p class="descricao">${vaga.descricao}</p>
+                    
                     <div class="requisitos">
-                        <strong>Requisitos:</strong>
+                        <strong>Requisitos</strong>
                         <ul>
                             ${vaga.requisitos.map(req => `<li>${req}</li>`).join('')}
                         </ul>
                     </div>
+                    
                     <div class="beneficios">
-                        <strong>Benefícios:</strong>
+                        <strong>Benefícios</strong>
                         <ul>
                             ${vaga.beneficios.map(ben => `<li>${ben}</li>`).join('')}
                         </ul>
                     </div>
+                    
                     <p class="categoria"><strong>Categoria:</strong> ${vaga.categoria}</p>
                     <p class="localizacao"><strong>Localização:</strong> ${vaga.localizacao || 'Não especificada'}</p>
                     <p class="pagamento"><strong>Pagamento:</strong> ${vaga.pagamento}</p>
                 `;
+                
+                // Animação de entrada
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
                 grid.appendChild(card);
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 50);
             });
         }
 
@@ -105,6 +186,28 @@
 
             renderizarVagas(filtradas);
         }
+
+        // Animação de scroll suave
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        // Observar cards quando forem adicionados
+        const observeCards = () => {
+            document.querySelectorAll('.vaga-card').forEach(card => {
+                observer.observe(card);
+            });
+        };
+
+        // Executar após carregar as vagas
+        setTimeout(observeCards, 100);
     </script>
 
     <script src="js/acessibilidade.js"></script>

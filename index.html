@@ -25,7 +25,7 @@
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#Microjobs">Microjobs</a></li>
                     <li><a href="#freelancers">Freelancers</a></li>
-                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="catalogo.html" target="_blank">Catálogo</a></li>
                     <li><a href="#contato">Contato</a></li>
                     <li><a href="login.html" class="btn-login">
                             <i class="fas fa-user"></i> Login
@@ -73,6 +73,8 @@
         </div>
     </header>
 
+    <!-- Removido menu duplicado e botões de login duplicados para evitar exibição dupla -->
+    <!--
     <nav>
         <ul class="nav-links">
             <li><a href="#inicio">InÃ­cio</a></li>
@@ -87,6 +89,7 @@
             <i class="fas fa-user"></i> Login
         </a>
     </div>
+    -->
 
     <section class="hero" id="inicio">
         <div class="particles" id="particles"></div>
@@ -237,17 +240,17 @@
 
 
     <script src="js/index.js"></script>
-    <script src="js/catalogo.js"></script>
-    <script src="js/acessibilidade.js"></script>
+    <!-- Removido o script js/catalogo.js para evitar duplicação da renderização das vagas -->
     <script src="js/darkMode.js"></script>
+    <script src="js/acessibilidade.js"></script>
 
     <!-- Ícone do chat -->
-    <div id="chat-icon" style="position: fixed; bottom: 20px; right: 20px; cursor: pointer; z-index: 1000;">
+    <div id="chat-icon" style="position: fixed; top: 50%; right: 20px; transform: translateY(-50%); cursor: pointer; z-index: 1000;">
         <i class="fas fa-comments" style="font-size: 60px; color: #007bff;"></i>
     </div>
 
     <!-- Container do chat -->
-    <div id="chat-container" style="position: fixed; bottom: 90px; right: 20px; width: 300px; height: 400px; display: none; border: 1px solid #ccc; border-radius: 10px; background: white; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    <div id="chat-container" style="position: fixed; top: 50%; right: 0; transform: translateY(-50%); width: 300px; height: 400px; display: none; border: 1px solid #ccc; border-radius: 10px 0 0 10px; background: white; z-index: 1000; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
         <div class="chat-container">
             <div class="chat-header">
                 WORKLI IA🤖
